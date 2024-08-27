@@ -1,0 +1,12 @@
+colorama
+marshmallow
+jsonschema
+mysql-connector-python
+pip-tools
+pytest
+python-dotenv
+toolz
+werkzeug
+flake8
+isort
+pre-commit
