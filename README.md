@@ -64,17 +64,27 @@ Esto hace que haya una mayor independencia de todas las capas y esto nso brinda 
 * Como puedo controlar el formato de lo que entra y lo que responde mis microservicios?
   * Gracias a la liberia `Marshmellow` realizo esquemas tanto para la request como para el response, brindadome serialización y deserialización de algunos campos asi mismo como validación de estos mismos, cumpliendo con la logica del negocio.
 
-## Description
-
+## Descripción: MICROSERVICIO DE ME GUSTA:
 ### ***SERVICIO DE " ME GUSTA " Y PROPUESTA DE MODELO :***
+![me-gusta-microservicio](https://github.com/user-attachments/assets/e26f7f43-7797-45c9-9963-ac477aa76bb5)
+
+En este microservicio ademas del modelo de base de datos que posteriormente se mostrara la actualización del modelo, este seria la arquitectura para dicho microservicio teniendo el siguiente flujo:
+
+1. API-GATEWAY: Nos ayudara a saber por cual servicio debera de acceder en este caso al servicio de Likes con su previa authenticación del usuario
+2. LOAD-BALANCER: Nos ayudara a controlar el flujo de peticiones hacia el servicio
+3. SQS: Nos ayudara a atender la peticiones en FIFO queue para ir atendiendo por capacidad de procesamiento
+4. LAMBDA-FUNCTION: En este caso tendra toda la implementacion del servicio de LIKES (like, dislike, historial de likes, etc)
+5. DYNAMODB tables: Alamacena los movimientos de likes del usuario a cada una de las propiedades 
+
+## Description
 
 #### MODELO ANTIGUO
 
-![entidad_relacion](https://github.com/sdparada97/API-Properties/assets/49702755/7f40e262-3ec2-457a-9f77-9a094d508b5a)
+![modeloantiguo](https://github.com/user-attachments/assets/93ab11c4-1788-49ff-836c-f50c04a599d6)
 
 #### MODELO PROPUESTA
 
-![new_entidad_relacion](https://github.com/sdparada97/API-Properties/assets/49702755/92afe9c6-e92a-4392-a490-143e6fd02d8e)
+![modelo_propuesta](https://github.com/user-attachments/assets/c6a3fa8b-37b4-4a1b-b6ea-33947f776f4b)
 
 ### ***JUSTIFICACION DE LA PROPUESTA :***
 
