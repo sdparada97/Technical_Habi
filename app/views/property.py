@@ -3,6 +3,7 @@ import json
 
 # Third party
 import jsonschema
+from marshmallow import ValidationError
 from werkzeug.exceptions import BadRequest, HTTPException, NotFound
 from werkzeug.wrappers import Request, Response
 
@@ -24,7 +25,6 @@ def get_request_data(request: Request):
     return {}
 
 
-# ENDPOINTS
 def get_properties(request: Request):
     try:
         body_params = get_request_data(request)
@@ -36,13 +36,9 @@ def get_properties(request: Request):
         properties = property_service.get_all_with_filters(body_params=validated_data)
 
         if not properties:
-            raise NotFound()
+            raise NotFound(description='Properties not found')
 
         result = property_response_schema.dump(properties)
         return Response(json.dumps(result, ensure_ascii=False), mimetype='application/json')
-    except NotFound as e:
-        raise NotFound(description='Properties not found') from e
-    except jsonschema.ValidationError as e:
+    except ValidationError as e:
         raise BadRequest(description='The input was not valid') from e
-    except HTTPException as e:
-        return e

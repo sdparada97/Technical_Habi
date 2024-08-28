@@ -16,4 +16,4 @@ load_dotenv(dotenv_path)
 DEBUG = os.getenv('DEBUG')
 
 application = App()
-run_simple('127.0.0.1', 5000, application, use_debugger=DEBUG, use_reloader=True)
+run_simple('0.0.0.0', 5000, application, use_debugger=DEBUG, use_reloader=True, use_evalex=True)
