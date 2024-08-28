@@ -1,0 +1,106 @@
+{
+	"info": {
+		"_postman_id": "2e16c765-76ea-41a4-9ff0-68ca8808f88f",
+		"name": "Technical-Habi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11032041",
+		"_collection_link": "https://personal-sergio.postman.co/workspace/Habi-API~588c93bb-c868-4849-af1d-213256763efd/collection/11032041-2e16c765-76ea-41a4-9ff0-68ca8808f88f?action=share&source=collection_link&creator=11032041"
+	},
+	"item": [
+		{
+			"name": "Get-properties",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "key",
+							"value": "X-API-Key",
+							"type": "string"
+						},
+						{
+							"key": "value",
+							"value": "WP9aoBSGRteWUrmQGOCrE2XClvvNz2qdq6IGq5zsAOu9Xzy64JPFkRTileEPN5jjUWx5mJRw6WNFkfXwuOOlEQAc4KocXf1GBzcnZFmoS4zl7ZQXHLEE1L48U1yp2BVw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"status\": [3],\n    \"city\": [\"bogota\"],\n    \"year\": [\"2021\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.10.12:5000/properties/",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"10",
+						"12"
+					],
+					"port": "5000",
+					"path": [
+						"properties",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get-properties-200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\": [3],\n    \"city\": [\"bogota\"],\n    \"year\": [\"2021\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://192.168.10.12:5000/properties/",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"10",
+								"12"
+							],
+							"port": "5000",
+							"path": [
+								"properties",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"address\": \"calle 95 # 78 - 49\",\n        \"city\": \"bogota\",\n        \"price\": 120000000,\n        \"description\": \"hermoso acabado, listo para estrenar\",\n        \"status\": \"pre_venta\"\n    },\n    {\n        \"address\": \"calle 23 #45-67q\",\n        \"city\": \"bogota\",\n        \"price\": 120000000,\n        \"description\": \"Hermoso apartamento en el centro de la ciudad\",\n        \"status\": \"pre_venta\"\n    },\n    {\n        \"address\": \"carrera 100 #15-90w\",\n        \"city\": \"bogota\",\n        \"price\": 350000000,\n        \"description\": \"Amplio apartamento en conjunto cerrado\",\n        \"status\": \"pre_venta\"\n    },\n    {\n        \"address\": \"carrera 100 #15-90w\",\n        \"city\": \"bogota\",\n        \"price\": 350000000,\n        \"description\": \"Amplio apartamento en conjunto cerrado\",\n        \"status\": \"pre_venta\"\n    },\n    {\n        \"address\": \"carrera 100 #15-90w\",\n        \"city\": \"bogota\",\n        \"price\": 350000000,\n        \"description\": \"Amplio apartamento en conjunto cerrado\",\n        \"status\": \"pre_venta\"\n    },\n    {\n        \"address\": \"calle 95 # 78 - 123\",\n        \"city\": \"bogota\",\n        \"price\": 120000000,\n        \"description\": \"hermoso acabado, listo para estrenar\",\n        \"status\": \"pre_venta\"\n    }\n]"
+				}
+			]
+		}
+	]
+}
